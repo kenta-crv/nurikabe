@@ -1,4 +1,5 @@
 class Estimate < ApplicationRecord
+  serialize :wide, Array
   belongs_to :company, optional: true
   validates :name, {presence: true}  #名前
   validates :tel, {presence: true} #電話番号

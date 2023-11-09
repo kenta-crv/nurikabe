@@ -91,9 +91,9 @@ class EstimatesController < ApplicationController
       :tel, #電話番号
       :address,
       :email, #メールアドレス
-      :wide, #会社HP
       :period,
-      :remarks #要望
+      :remarks, #要望
+      wide: []  #会社HP
     )
   end
 end

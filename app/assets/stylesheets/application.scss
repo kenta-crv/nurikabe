@@ -17,9 +17,9 @@
 
  @import "bootstrap";
 
- $main_color: #019000;
- $sub_color: #019000;
- $asort_color: #019000;
+ $main_color: #4E7034;
+ $sub_color: #94A843;
+ $asort_color: #4E7034;
 
  body {
    width:100%;
@@ -202,7 +202,7 @@
         font-size:4.0vw;
         font-weight:bold;
         line-height:7vw;
-        color:red;
+        color:$sub_color;
         text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff;
       @media(max-width: 748px) {
           text-align:center;

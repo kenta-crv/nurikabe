@@ -23,8 +23,8 @@ module Eatery
     address: 'smtp3.gmoserver.jp',
     domain: 'factoru.jp',
     port: 587,
-    user_name: 'shiroari@factoru.jp',
-    password: 'iXcA3#f&',
+    user_name: 'exterior@factoru.jp',
+    password: 't#5fRTvs',
     authentication: 'plain',
     enable_starttls_auto: true
     }

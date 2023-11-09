@@ -29,7 +29,7 @@ table.company.responsive-table
         td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | 住所
+          | 住所（わかる範囲で）
         td.responsive-cell
          .input-container
           = f.text_field :address
@@ -45,21 +45,32 @@ table.company.responsive-table
         td.label-cell
           strong.label.label-blue 任意
         td.arrow-box-cell
-          | 平米数
+          | 相談したい範囲
         td.responsive-cell
          .input-container
-          = f.text_field :wide
+          = f.collection_check_boxes :wide, [\
+            ["門柱・門周り","門柱・門周り"],\
+            ["フェンス","フェンス"],\
+            ["アプローチ","アプローチ"],\
+            ["カーポート・駐車場","カーポート・駐車場"],\
+            ["植栽","植栽"],\
+            ["庭","庭"],\
+            ["その他","その他"],\
+            ], :first, :last do |b|
+            = b.check_box
+            = b.text
       tr
         td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | 希望納期
+          | 発注予定時期
         td.responsive-cell
          .input-container
           = f.select(:period,[\
-            ["緊急で依頼したい","緊急で依頼したい"],\
-            ["急ぎではない","急ぎではない"],\
-            ["決まっていない","決まっていない"],\
+            ["すぐにでも","すぐにでも"],\
+            ["1ヶ月以内","1ヶ月以内"],\
+            ["3ヶ月以内","3ヶ月以内"],\
+            ["6ヶ月以内","6ヶ月以内"],\
            ],include_blank: "選択してください")
       tr
         td.label-cell
