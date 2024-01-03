@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:show]
 
-  root to: 'top#index' #トップページ
-  #特集
+  root to: 'top#index' #Exterior LP
+  get '/fence' => 'top#fence' #Fence LP
+  get '/paint' => 'top#paint' #Paint LP
 
   resources :columns
 

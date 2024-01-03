@@ -1,6 +1,11 @@
 class TopController < ApplicationController
   def index
-    @columns = Column.all
+  end
+
+  def fence
+  end
+
+  def paint
   end
 
   def faq

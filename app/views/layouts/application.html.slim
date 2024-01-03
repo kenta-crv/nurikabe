@@ -6,8 +6,16 @@ html
   header
       .row
         .col-xs-3
-           = link_to "/"
-            =image_tag "rogo.webp", class:"header-image", alt:"ファクタリングの一括比較見積りなら『ファクタリンク』"
+          - if request.path == "/paint"
+           = link_to paint_path do
+            = image_tag "rogo-paint.webp", class: "header-image"
+          - elsif request.path == "/fence"
+           = link_to fence_path do
+            = image_tag "rogo-fence.webp", class: "header-image"
+          - else
+           = link_to root_path do
+            = image_tag "rogo.webp", class: "header-image"
+
         .col-xs-7
         .col-xs-2
                 .navToggle
