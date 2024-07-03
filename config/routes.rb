@@ -9,10 +9,27 @@ Rails.application.routes.draw do
   resources :admins, only: [:show]
 
   root to: 'top#index' #Exterior LP
+  get '/partner' => 'top#partner' 
   get '/fence' => 'top#fence' #Fence LP
   get '/paint' => 'top#paint' #Paint LP
 
   resources :columns
+
+  resources :contracts do
+    resource :progresses
+    collection do
+      post :confirm
+      post :thanks
+    end
+    member do
+      post :send_mail
+      post :send_mail_start #開始日の送信
+      get "info" #案内
+      get "conclusion"
+      get "payment" 
+      get "start"
+    end
+  end
 
   resources :estimates do
     resource :comments

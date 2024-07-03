@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_055408) do
+ActiveRecord::Schema.define(version: 2024_06_01_123821) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -112,6 +112,23 @@ ActiveRecord::Schema.define(version: 2022_02_10_055408) do
     t.string "address"
     t.string "mail"
     t.string "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.string "company"
+    t.string "name"
+    t.string "tel"
+    t.string "email"
+    t.string "address"
+    t.string "period"
+    t.string "area"
+    t.string "message"
+    t.string "post_title"
+    t.string "president_name"
+    t.string "agree"
+    t.string "contract_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
