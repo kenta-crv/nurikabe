@@ -1,8 +1,8 @@
 class EstimateMailer < ActionMailer::Base
-  default from: "exterior@factoru.jp"
+  default from: "info@exterior-garden.jp"
   def received_email(estimate)
     @estimate = estimate
-    mail to: "exterior@factoru.jp"
+    mail to: "info@exterior-garden.jp"
     mail(subject: 'エクステリアガーデンにお問い合わせ頂きありがとうございます。') do |format|
       format.text
     end

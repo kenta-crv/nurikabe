@@ -21,9 +21,9 @@ module Eatery
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
     address: 'smtp3.gmoserver.jp',
-    domain: 'factoru.jp',
+    domain: 'exterior-garden.jp',
     port: 587,
-    user_name: 'exterior@factoru.jp',
+    user_name: 'info@exterior-garden.jp',
     password: ENV['EMAIL_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true

@@ -1,9 +1,9 @@
 class ContractMailer < ActionMailer::Base
-  default from: "exterior@factoru.jp"
+  default from: "info@exterior-garden.jp"
   def received_email(contract)
     @contract = contract
     mail from: contract.email
-    mail to: "exterior@factoru.jp"
+    mail to: "info@exterior-garden.jp"
     mail(subject: 'エクステリアガーデンにお問い合わせがありました') do |format|
       format.text
     end
@@ -19,7 +19,7 @@ class ContractMailer < ActionMailer::Base
 
   def contract_received_email(contract)
     @contract = contract
-    mail to: "exterior@factoru.jp"
+    mail to: "info@exterior-garden.jp"
     mail(subject: 'エクステリアガーデンで契約同意がありました') do |format|
       format.text
     end
@@ -42,6 +42,6 @@ class ContractMailer < ActionMailer::Base
   def send_first_email(contract)
     @contract = contract
     @contract_url = "https://ri-plus.jp/contracts/#{contract.id}"
-    mail(from:"exterior@factoru.jp", to: @contract.email, subject: "契約締結のご案内")
+    mail(from:"info@exterior-garden.jp", to: @contract.email, subject: "契約締結のご案内")
   end
 end
