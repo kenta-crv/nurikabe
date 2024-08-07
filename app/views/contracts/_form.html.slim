@@ -60,7 +60,6 @@ table.company.responsive-table
             ["すぐにでも","すぐにでも"],\
             ["1ヶ月以内","1ヶ月以内"],\
             ["3ヶ月以内","3ヶ月以内"],\
-            ["6ヶ月以内","6ヶ月以内"],\
            ],include_blank: "選択してください")
       tr
         td.label-cell
@@ -69,17 +68,12 @@ table.company.responsive-table
           | 希望エリア
         td.responsive-cell
          .input-container
-          = f.select(:area,[\
-            ["すぐにでも","すぐにでも"],\
-            ["1ヶ月以内","1ヶ月以内"],\
-            ["3ヶ月以内","3ヶ月以内"],\
-            ["6ヶ月以内","6ヶ月以内"],\
-           ],include_blank: "選択してください")
+          = f.text_field :area, placeholder:"（例）東京都渋谷区、港区、新宿区周辺"
       tr
         td.label-cell
           strong.label.label-blue 任意
         td.arrow-box-cell
-          | 備考・要望
+          | 備考・ご要望等
         td.responsive-cell
          .input-container
           = f.text_area :message, placeholder:"（例）お問い合わせ内容"
