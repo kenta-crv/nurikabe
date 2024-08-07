@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/partner' => 'top#partner' 
   get '/fence' => 'top#fence' #Fence LP
   get '/paint' => 'top#paint' #Paint LP
+  get '/download' => 'top#download' 
 
   resources :columns
 

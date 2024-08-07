@@ -8,6 +8,9 @@ class TopController < ApplicationController
   def fence
   end
 
+  def download
+  end
+
   def paint
   end
 
