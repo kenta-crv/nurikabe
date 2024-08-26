@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :estimate
+  belongs_to :contract
 end

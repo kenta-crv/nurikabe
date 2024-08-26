@@ -1,43 +1,46 @@
 class CommentsController < ApplicationController
-
-	def create
-		@estimate = Estimate.find(params[:estimate_id])
-		@estimate.comment.create(comment_params)
-		redirect_to estimate_path(@estimate)
-	end
+  def create
+    @contract = Contract.find(params[:contract_id])
+    @comment = @contract.comments.new(comment_params)
+    
+    if @comment.save
+      ContractMailer.new_comment_notification(@comment).deliver_now
+      redirect_to contract_path(@contract), notice: 'コメントを更新しました。'
+    else
+      render :new
+    end
+  end
+  
 
   def edit
-    @estimate = Estimate.find(params[:estimate_id])
+    @contract = Contract.find(params[:contract_id])
     @comment = Comment.find(params[:id])
-    #@comment = @estimate.comments.build
+    #@comment = @contract.comments.build
   end
 
 	def destroy
-		@estimate = Estimate.find(params[:estimate_id])
-		@comment = @estimate.comment.find(params[:id])
+		@contract = Contract.find(params[:contract_id])
+		@comment = @contract.comments.find(params[:id])
 		@comment.destroy
-		redirect_to estimate_path(@estimate)
+		redirect_to contract_path(@contract)
 	end
 
-	 def update
-    @comment = Comment.find(params[:estimate_id])
-    @comment = @estimate.comment.find(params[:id])
+  def update
+    @contract = Contract.find(params[:contract_id])
+    @comment = @contract.comments.find(params[:id])
     if @comment.update(comment_params)
-       redirect_to estimate_path(@estimate)
+       redirect_to contract_path(@contract)
     else
         render 'edit'
     end
   end
 
   private
- 	def comment_params
- 		params.require(:comment).permit(
- 		:asahi,
-    :cocacola,
-    :dydo,
-    :itoen,
-    :kirin,
-    :itoen
+  def comment_params
+ 	params.require(:comment).permit(
+        :status,
+        :next,
+        :body,
     )
- 	end
+  end
 end

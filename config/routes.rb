@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :columns
 
   resources :contracts do
-    resource :progresses
+    resource :comments
     collection do
       post :confirm
       post :thanks
@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   end
 
   resources :estimates do
-    resource :comments
     collection do
       post :confirm
       post :thanks
@@ -51,16 +50,6 @@ Rails.application.routes.draw do
     collection do
       # メッセージルーム
       get :room, path: '/room/:uri_token'
-    end
-  end
-
-  #企業側アカウント
-  resources :companies do
-    collection do
-      get :pay
-      post :get_point
-      post :confirm
-      post :thanks
     end
   end
 

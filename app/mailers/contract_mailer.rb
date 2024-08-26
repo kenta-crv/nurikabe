@@ -44,4 +44,15 @@ class ContractMailer < ActionMailer::Base
     @contract_url = "https://ri-plus.jp/contracts/#{contract.id}"
     mail(from:"info@exterior-garden.jp", to: @contract.email, subject: "契約締結のご案内")
   end
+
+  def new_comment_notification(comment)
+    @comment = comment
+    @contract = comment.contract
+    @contract_url = "https://ri-plus.jp/contracts/#{@contract.id}"
+    mail to: "reply@ri-plus.jp"
+    mail(subject: "#{@contract.company}のステータスが#{@comment.status}に更新されました") do |format|
+      format.text
+    end
+  end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_01_123821) do
+ActiveRecord::Schema.define(version: 2024_08_26_151926) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -93,16 +93,13 @@ ActiveRecord::Schema.define(version: 2024_06_01_123821) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "estimate_id"
-    t.string "asahi"
-    t.string "cocacola"
-    t.string "dydo"
-    t.string "itoen"
-    t.string "kirin"
-    t.string "otsuka"
+    t.integer "contract_id", null: false
+    t.string "status"
+    t.datetime "next"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["estimate_id"], name: "index_comments_on_estimate_id"
+    t.index ["contract_id"], name: "index_comments_on_contract_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -131,6 +128,7 @@ ActiveRecord::Schema.define(version: 2024_06_01_123821) do
     t.string "contract_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "select_payment"
   end
 
   create_table "estimates", force: :cascade do |t|
