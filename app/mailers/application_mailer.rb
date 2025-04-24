@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "info@exterior-garden.jp"
+  default from: "info@tele-match.net"
   layout 'mailer'
 end

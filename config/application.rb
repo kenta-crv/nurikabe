@@ -21,9 +21,9 @@ module Eatery
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
     address: 'smtp.lolipop.jp',
-    domain: 'exterior-garden.jp',
+    domain: 'tele-match.net',
     port: 587,
-    user_name: 'info@exterior-garden.jp',
+    user_name: 'info@tele-match.net',
     password: ENV['EMAIL_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
