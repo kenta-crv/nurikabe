@@ -19,8 +19,7 @@
      th メール送信
    - @estimates.each do |estimate|
     tr
-     td = link_to estimate.co, estimate_path(estimate), clsss:"store"
-     td = estimate.name
+     td = link_to estimate.name, estimate_path(estimate), clsss:"store"
      td = estimate.tel
      td
      td
